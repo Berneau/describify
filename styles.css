@@ -19,8 +19,8 @@ h1 {
 }
 
 input[type=text] {
-  background: rgb(43, 46, 54);
-  padding: 10px;
+  background: #2b2e36;
+  padding: 20px;
   outline: none;
   border: none;
   color: #EEE;
@@ -28,6 +28,8 @@ input[type=text] {
   text-transform: uppercase;
   margin-bottom: 20px;
   font-size: 3vw;
+  font-weight: 100;
+  box-sizing: border-box;
 }
 
 button {
@@ -35,7 +37,7 @@ button {
   display: block;
   border: none;
   text-transform: uppercase;
-  color: rgb(233, 72, 58);
+  color: #e9483a;
   font-weight: 700;
   font-size: 20px;
   text-align: center;
@@ -57,11 +59,32 @@ button:hover {
   margin-top: 50px;
   line-height: 1.5;
   display: inline-block;
-  width: 200px;
+  width: 280px;
 }
 
-#result b {
+#result .letter-description {
   text-transform: uppercase;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 2px;
+}
+
+#result .letter-description .letter {
+  display: inline-block;
+  width: 50px;
+  background: #2b2e36;
+  margin-right: 2px;
+  color: #e9483a;
+  font-weight: 700;
+}
+
+#result .letter-description .description {
+  display: inline-block;
+  width: 228px;
+  text-align: left;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background: #2b2e36;
 }
 
 @media (min-width: 1000px) {
@@ -70,15 +93,26 @@ button:hover {
   }
 
   input[type=text] {
-    font-size: 25px;
+    font-size: 22px;
+    width: 280px;
   }
 
   button {
     font-size: 25px;
   }
+}
 
-  .emph {
-    color: rgb(233, 72, 58);
-    font-weight: bold;
+@media (max-width: 450px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  input[type=text] {
+    font-size: 15px;
+    width: 280px;
+  }
+
+  button {
+    font-size: 25px;
   }
 }

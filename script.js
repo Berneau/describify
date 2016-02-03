@@ -1,4 +1,3 @@
-
 var alphabet = {
   'a': ['abandoned', 'able', 'absolute', 'adorable', 'adventurous', 'academic', 'acceptable', 'acclaimed', 'accomplished', 'accurate', 'aching', 'cidic', 'acrobatic', 'active', 'actual', 'adept', 'admirable', 'admired', 'adolescent', 'adorable', 'adored', 'advanced', 'afraid', 'affectionate', 'aged', 'aggravating', 'aggressive', 'agile', 'agitated', 'agonizing', 'agreeable', 'ajar', 'alarmed', 'alarming', 'alert', 'alienated', 'alive', 'all', 'altruistic', 'amazing', 'ambitious', 'ample', 'amused', 'amusing', 'anchored', 'ancient', 'angelic', 'angry', 'anguished', 'animated', 'annual', 'another', 'antique', 'anxious', 'any', 'apprehensive', 'appropriate', 'apt', 'arctic', 'arid', 'aromatic', 'artistic', 'ashamed', 'assured', 'astonishing', 'athletic', 'attached', 'attentive', 'attractive', 'austere', 'authentic', 'authorized', 'automatic', 'avaricious', 'average', 'aware', 'awesome', 'awful', 'awkward'],
   'b': ['babyish', 'bad', 'back', 'baggy', 'bare', 'barren', 'basic', 'beautiful', 'belated', 'beloved', 'beneficial', 'better', 'best', 'bewitched', 'big', 'big-hearted', 'biodegradable', 'bite-sized', 'bitter', 'black', 'black-and-white', 'bland', 'blank', 'blaring', 'bleak', 'blind', 'blissful', 'blond', 'blue', 'blushing', 'bogus', 'boiling', 'bold', 'bony', 'boring', 'bossy', 'both', 'bouncy', 'bountiful', 'bowed', 'brave', 'breakable', 'brief', 'bright', 'brilliant', 'brisk', 'broken', 'bronze', 'brown', 'bruised', 'bubbly', 'bulky', 'bumpy', 'buoyant', 'burdensome', 'burly', 'bustling', 'busy', 'buttery', 'buzzing'],
@@ -33,7 +32,7 @@ $('#describeButton').on('click', function() {
 });
 
 $('#name').on('keypress', function(e) {
-  if(e.which === 13) {
+  if (e.which === 13) {
     describeName();
   }
 });
@@ -53,7 +52,7 @@ function describeName() {
 
 
 function timedAppend(word, delay) {
-  setTimeout(function(){
-    $('#result').append('<p class="animated fadeInRight"><span class="emph">' + word.substr(0, 1).toUpperCase() + '</span>' + word.substr(1) + '</p>');
+  setTimeout(function() {
+    $('#result').append('<div class="letter-description animated fadeInRight"><div class="letter">' + word.substr(0, 1) + '</div><div class="description">' + word + '</div></div>');
   }, delay);
 }
