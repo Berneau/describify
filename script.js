@@ -38,16 +38,22 @@ $('#name').on('keypress', function(e) {
   }
 });
 
+
 function describeName() {
+  $('#result').empty();
   var name = $('#name').val().toLowerCase();
-  var $result = $('#result');
-  $result.empty();
+  var delay = 200;
   name.split('').forEach(function(letter) {
     var word = alphabet[letter][parseInt((Math.random() * alphabet[letter].length))];
-    var trimmedWord = word.substr(1);
-    console.log(letter.toUpperCase() + ': ' + trimmedWord);
-
-    $result.append('<p class="animated fadeInRight"><span class="emph">' + letter.toUpperCase() + '</span>' + trimmedWord + '</p>');
+    timedAppend(word, delay);
+    delay += 200;
     //responsiveVoice.speak('You are: ' + word);
   });
+}
+
+
+function timedAppend(word, delay) {
+  setTimeout(function(){
+    $('#result').append('<p class="animated fadeInRight"><span class="emph">' + word.substr(0, 1).toUpperCase() + '</span>' + word.substr(1) + '</p>');
+  }, delay);
 }
