@@ -43,7 +43,7 @@ function describeName() {
   var $result = $('#result');
   $result.empty();
   name.split('').forEach(function(letter) {
-    var word = alphabet[letter][parseInt((Math.random() * alphabet[letter].length) + 1)];
+    var word = alphabet[letter][parseInt((Math.random() * alphabet[letter].length))];
     var trimmedWord = word.substr(1);
     console.log(letter.toUpperCase() + ': ' + trimmedWord);
 
