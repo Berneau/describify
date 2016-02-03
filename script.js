@@ -44,8 +44,10 @@ function describeName() {
   $result.empty();
   name.split('').forEach(function(letter) {
     var word = alphabet[letter][parseInt((Math.random() * alphabet[letter].length) + 1)];
-    console.log(letter + ': ' + word);
-    $result.append('<b>' + letter + '</b>: ' + word + '<br>');
-    responsiveVoice.speak('You are: ' + word);
+    var trimmedWord = word.substr(1);
+    console.log(letter.toUpperCase() + ': ' + trimmedWord);
+
+    $result.append('<p class="animated fadeInRight"><span class="emph">' + letter.toUpperCase() + '</span>' + trimmedWord + '</p>');
+    //responsiveVoice.speak('You are: ' + word);
   });
 }
