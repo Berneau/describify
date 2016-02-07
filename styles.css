@@ -59,7 +59,7 @@ button:hover {
   margin-top: 50px;
   line-height: 1.5;
   display: inline-block;
-  width: 280px;
+  width: 332px;
 }
 
 #result .letter-description {
@@ -87,6 +87,31 @@ button:hover {
   background: #2b2e36;
 }
 
+#result .letter-description .reloadButton {
+  width: 50px;
+  display: inline-block;
+  /*padding-top: 13px;*/
+  background: #2b2e36;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+#result .letter-description .reloadButton:hover > img {
+  animation-name: rotateArrows;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+#result .letter-description .reloadButton img {
+  width: 24px;
+  vertical-align: middle;
+}
+
+@keyframes rotateArrows {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @media (min-width: 1000px) {
   h1 {
     font-size: 80px;
@@ -94,7 +119,7 @@ button:hover {
 
   input[type=text] {
     font-size: 22px;
-    width: 280px;
+    width: 332px;
   }
 
   button {
@@ -109,7 +134,7 @@ button:hover {
 
   input[type=text] {
     font-size: 15px;
-    width: 280px;
+    width: 332px;
   }
 
   button {

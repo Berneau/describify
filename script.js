@@ -31,6 +31,12 @@ $('#describeButton').on('click', function() {
   describeName();
 });
 
+
+$('#result').on('click', '.reloadButton', function(e) {
+  reloadLetter(e.currentTarget.parentElement);
+})
+
+
 $('#name').on('keypress', function(e) {
   if (e.which === 13) {
     describeName();
@@ -38,21 +44,31 @@ $('#name').on('keypress', function(e) {
 });
 
 
+function reloadLetter(elem) {
+  var letter = elem.children[0].innerHTML;
+  elem.children[1].innerHTML = getWordByLetter(letter);
+}
+
+
 function describeName() {
   $('#result').empty();
   var name = $('#name').val().toLowerCase();
   var delay = 200;
   name.split('').forEach(function(letter) {
-    var word = alphabet[letter][parseInt((Math.random() * alphabet[letter].length))];
+    var word = getWordByLetter(letter);
     timedAppend(word, delay);
     delay += 200;
-    //responsiveVoice.speak('You are: ' + word);
   });
+}
+
+
+function getWordByLetter(letter) {
+  return alphabet[letter][parseInt((Math.random() * alphabet[letter].length))];
 }
 
 
 function timedAppend(word, delay) {
   setTimeout(function() {
-    $('#result').append('<div class="letter-description animated fadeInRight"><div class="letter">' + word.substr(0, 1) + '</div><div class="description">' + word + '</div></div>');
+    $('#result').append('<div class="letter-description animated fadeInRight"><div class="letter">' + word.substr(0, 1) + '</div><div class="description">' + word + '</div><div class="reloadButton"><img src="reload.png"></div></div>');
   }, delay);
 }
