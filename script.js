@@ -46,7 +46,10 @@ $('#name').on('keypress', function(e) {
 
 function reloadLetter(elem) {
   var letter = elem.children[0].innerHTML;
-  elem.children[1].innerHTML = getWordByLetter(letter);
+  var div = elem.children[1];
+  div.className += " animated fadeIn";
+  div.innerHTML = getWordByLetter(letter);
+  resetClass(div);
 }
 
 
@@ -59,6 +62,13 @@ function describeName() {
     timedAppend(word, delay);
     delay += 200;
   });
+}
+
+
+function resetClass(elem) {
+  setTimeout(function() {
+    elem.className = "description"
+  }, 200);
 }
 
 
